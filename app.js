@@ -11,12 +11,11 @@ var Server = require('mongodb').Server;
  	app.set('view engine', 'html');
  	app.set('views', __dirname);
 
- 	console.log(__dirname);
  	app.get('/', function (req, res) {
  			db.collection('clients').findOne({}, function (err, doc) {
  		        res.render('welcome', { name: doc.name, cache: false });
  		    });	 
  	});
      app.listen(8080);
-     console.log('Server Corriendo');
+     console.log('Server Running');
  });
